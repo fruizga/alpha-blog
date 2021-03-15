@@ -1,11 +1,25 @@
-# README
+Resource
+- Users - create users table and model
+        - add validations
+        * username must be present and unique, min 3 max 25
+        * email address must be present and unique, max 105
+        * email must be valid email format, check with email regex
 
-<div class="container" id="home-container">
-  <div class="jumbotron text-center text-white">
-    <h1 class="display-4">Alpha Blog</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <a class="btn btn-success btn-lg" href="#" role="button">Sign up!</a>
-  </div>
-</div>
+Associations
+- One-to-many
+  between users and articles
+
+REST for users
+
+Authentication
+- Login using secure password
+
+Restriction of actions
+- Based on logged in/logged out state
+
+Security
+- Admin user functionality and access level
+
+
+
+

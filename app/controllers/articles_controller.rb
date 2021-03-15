@@ -1,20 +1,18 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
-   def index
+  def show
+  end
+
+  def index
     @articles = Article.paginate(page: params[:page], per_page: 5)
   end
 
-  def show
-    
-  end
-
- def new
+  def new
     @article = Article.new
   end
 
   def edit
-    
   end
 
   def create
@@ -22,7 +20,7 @@ class ArticlesController < ApplicationController
     @article.user = User.first
     if @article.save
       flash[:notice] = "Article was created successfully."
-      redirect_to @article 
+      redirect_to @article
     else
       render 'new'
     end
@@ -38,7 +36,6 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:id])
     @article.destroy
     redirect_to articles_path
   end
@@ -53,6 +50,4 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :description)
   end
 
-
-  
 end
